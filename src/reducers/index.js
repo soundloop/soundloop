@@ -27,7 +27,7 @@ export default function(state, action) {
       screenHeight: window.innerHeight,
       loopCount: 1,
       muted: false,
-      mode: "angular",
+      mode: action.data.shared.mode,
       selectedSustain: "8n",
       fileName: action.data.shared.fileName,
       volume: 0,
