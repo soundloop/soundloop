@@ -31,7 +31,7 @@ export default function(state, action) {
       selectedSustain: "8n",
       fileName: action.data.shared.fileName,
       volume: 0,
-      tempo: 1,
+      tempo: 110,
       toneSizes: {
         "32n": 10,
         "16n": 14,

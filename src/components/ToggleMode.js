@@ -26,14 +26,17 @@ class ToggleMode extends React.Component {
     return (
       <React.Fragment>
         <br />
-        <h3 className="light inl-blk">
-          WARNING: Switching modes will reset your SoundLoop!{" "}
-        </h3>
-        <br />
-        <ToggleButtonGroup value={this.props.mode} exclusive onChange={this.handleClick}>
-          <ToggleButton value="angular">Angular</ToggleButton>
+        <ToggleButtonGroup
+          value={this.props.mode}
+          exclusive
+          onChange={this.handleClick}
+        >
           <ToggleButton value="linear">Linear</ToggleButton>
+          <ToggleButton value="angular">Angular</ToggleButton>
         </ToggleButtonGroup>
+        <h3 className="light inl-blk desc">
+          Switching modes will reset your SoundLoop!{" "}
+        </h3>
       </React.Fragment>
     );
   }

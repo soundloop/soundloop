@@ -27,12 +27,11 @@ export default function shared(
     screenHeight: window.innerHeight,
     loopCount: 1,
     muted: false,
-    mode: "angular",
-
+    mode: "linear",
     selectedSustain: "8n",
     fileName: "MyProject",
     volume: 0,
-    tempo: 1,
+    tempo: 110,
     toneSizes: {
       "32n": 10,
       "16n": 14,
@@ -75,7 +74,7 @@ export default function shared(
     case UPDATE_TEMPO:
       return Object.assign({}, state, {
         tempo: action.tempo
-      })
+      });
 
     case SCREEN_RESIZE:
       return Object.assign({}, state, {
