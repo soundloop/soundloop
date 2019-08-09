@@ -1,6 +1,12 @@
 import { addLoopCount } from "./shared";
 
-//LOOPS
+/*
+The loops actions send data pertaining to loops in the store to the reducers. This includes addLoop(), which sends
+information such as radius and rotation to the loops reducer
+
+activateLoop() in particular also dispatches an action from shared that updates the loopCount
+*/
+
 export const ADD_LOOP = "ADD_LOOP";
 export const UPDATE_LOOP = "UPDATE_LOOP";
 export const RECEIVE_LOOPS = "RECEIVE_LOOPS";
@@ -9,8 +15,6 @@ export const UPDATE_LOOP_SPEED = "UPDATE_LOOP_SPEED";
 
 let nextLoopId = 0;
 export function addLoop(rad) {
-  var cx = window.innerWidth / 2;
-  var cy = window.innerHeight / 2;
   return {
     type: ADD_LOOP,
     id: nextLoopId++,

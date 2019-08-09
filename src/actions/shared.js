@@ -1,6 +1,10 @@
 import { addLoop, activateLoop } from "./loops";
 
-//OVERALL
+/*
+The shared actions send globally-relevant data to the reducers. For instance, togglePlay() sends 
+updates to state.shared.playing, which affects many different components 
+*/
+
 export const TOGGLE_PLAY = "TOGGLE_PLAY";
 export const TOGGLE_STOP = "TOGGLE_STOP";
 export const TOGGLE_RESTART = "TOGGLE_RESTART";

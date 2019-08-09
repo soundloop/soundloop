@@ -1,6 +1,11 @@
 import { ADD_LOOP, UPDATE_LOOP, ACTIVATE_LOOP, UPDATE_LOOP_SPEED } from "../actions/loops";
 import { TRASH_ALL_LINEAR, TRASH_ALL_ANGULAR } from "../actions/shared";
 
+/*
+The loops reducer updates the store for all loop-related state, including adding a new loop to the store, 
+activating a loop, and resetting all loops
+*/
+
 let nextLoopId = 0;
 export default function loops(state = [], action) {
   switch (action.type) {
@@ -34,15 +39,15 @@ export default function loops(state = [], action) {
         ...state.slice(action.id + 1)
       ];
 
-      case UPDATE_LOOP_SPEED:
-          return [
-            ...state.slice(0, action.id),
-            {
-              ...state[action.id],
-              speed: action.speed
-            },
-            ...state.slice(action.id + 1)
-          ];
+    case UPDATE_LOOP_SPEED:
+      return [
+        ...state.slice(0, action.id),
+        {
+          ...state[action.id],
+          speed: action.speed
+        },
+        ...state.slice(action.id + 1)
+      ];
 
     case ACTIVATE_LOOP:
       return [

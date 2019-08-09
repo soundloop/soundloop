@@ -1,18 +1,19 @@
 import {
   ADD_TONE,
-  RECEIVE_TONES,
-  RESIZE_TONE,
   UPDATE_TONE,
-  DELETE_TONE,
   REPLACE_TONE
 } from "../actions/tones";
-import { strictEqual } from "assert";
-import { stat } from "fs";
 import { TRASH_ALL_LINEAR, TRASH_ALL_ANGULAR } from "../actions/shared";
+
+/*
+The tones reducer updates the store for all tone-related state, including adding a new tone to the store, 
+updating the values of a tone in the store, and replacing a tone on delete
+*/
 
 let nextToneId = 0;
 export default function tones(state = [], action) {
   switch (action.type) {
+    
     case ADD_TONE:
       return [
         ...state,
@@ -40,30 +41,6 @@ export default function tones(state = [], action) {
           sound: action.sound,
           radius: action.radius,
           duration: action.duration
-        },
-        ...state.slice(id + 1)
-      ];
-
-    case RESIZE_TONE:
-      return { state };
-
-    case DELETE_TONE:
-      // let x = [...state.filter((i, index) => index !== action.id)];
-      // return x;
-      var id = action.id;
-      return [
-        ...state.slice(0, id),
-        {
-          id: id,
-          color: action.color,
-          stroke: action.stroke,
-          strokeWidth: action.strokeWidth,
-          attachedLoop: action.attachedLoop,
-          radius: action.radius,
-          sound: action.sound,
-          position: action.position,
-          offset: action.offset,
-          rotation: action.rotation
         },
         ...state.slice(id + 1)
       ];
@@ -97,12 +74,6 @@ export default function tones(state = [], action) {
       nextToneId = 0;
 
       return [];
-
-    case RECEIVE_TONES:
-      return {
-        ...state,
-        ...action.tones
-      };
 
     default:
       return state;

@@ -1,10 +1,11 @@
-//TONES
 export const ADD_TONE = "ADD_TONE";
 export const UPDATE_TONE = "UPDATE_TONE";
-export const RESIZE_TONE = "RESIZE_TONE";
-export const DELETE_TONE = "DELETE_TONE";
-export const RECEIVE_TONES = "RECEIVE_TONES";
 export const REPLACE_TONE = "REPLACE_TONE";
+
+/*
+The tones actions send data pertaining to tones in the store to the reducers. For instance, addTone() sends
+information such as offset, color, and sound to the tones reducer
+*/
 
 export function addTone(
   colorCode,
@@ -31,18 +32,6 @@ export function addTone(
     radius: rad,
     sound: sound,
     rotation: rotation
-  };
-}
-export function deleteTone(index) {
-  return {
-    type: DELETE_TONE,
-    id: index
-  };
-}
-export function resizeTone(tone) {
-  return {
-    type: RESIZE_TONE,
-    tone
   };
 }
 
@@ -92,9 +81,3 @@ export function replaceTone(
   };
 }
 
-export function receiveTones(tones) {
-  return {
-    type: RECEIVE_TONES,
-    tones
-  };
-}

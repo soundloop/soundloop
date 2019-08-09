@@ -1,6 +1,6 @@
 import { IMPORT_FILE } from "../actions/file";
 
-//this part of our store isn't currently used. It saves the original copy of an imported file.
+// This part of our store isn't currently used. It saves the original copy of an imported file.
 // This could be useful in the future for a feature to do a reset to the saved file state.
 
 export default function file(state = {}, action) {

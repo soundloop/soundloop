@@ -16,6 +16,10 @@ import {
   UPDATE_SUSTAIN
 } from "../actions/shared";
 
+/*
+The shared reducer updates the store for globally relevant state, using data from the shared actions
+*/
+
 export default function shared(
   state = {
     playing: false,
