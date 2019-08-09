@@ -1,12 +1,8 @@
 # What is Soundloop?
 
----
-
 Soundloop is a web application that allows students of any age to create music using computational thinking concepts. 
 
 ## **Available Scripts**
-
----
 
 In the project directory, you can run:
 
@@ -36,13 +32,9 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 ## Deployment
 
----
-
 This github repository is linked to Netlify ([https://www.netlify.com/](https://www.netlify.com/)), causing continuous deployment of the app whenever pushes to the master branch are made. 
 
 ## Major Frameworks & API's
-
----
 
 - React - a Javascript framework for creating UI. [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
 - Redux - manages the global state of the application, pushing the data needed across components to one overall JSON file called the store.  [https://redux.js.org/](https://redux.js.org/)
@@ -50,8 +42,6 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 - ToneJS - a framework for creating interactive music in the browser. [https://tonejs.github.io/](https://tonejs.github.io/)
 
 ## Navigating the Project Directory
-
----
 
 - **build** - the compiled static code that the browser reads for rendering Soundloop
 - **node_modules** - the packages needed for running soundloop
@@ -66,16 +56,12 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 
 ## How the app works
 
----
-
 Each note is a circle that can be dragged onto a loop. During play, these notes will rotate around the loop and make sound upon striking the cord. 
 
 There are two different modes to SoundLoop - linear and angular. 
 
 ### Linear Mode
-
 In linear mode, each loop plays at a constant linear velocity. This means that the smaller the loop is, the faster the notes will complete a loop cycle. This mode is great for creating rhythmic harmonies and crafting interesting new compositions.
 
 ### Angular Mode
-
 In angular mode, each loop plays at a constant angular velocity. If lining up notes across loops, they will all play at the same time and make a chord. This mode is best for recreating your favorite songs.
