@@ -1,4 +1,5 @@
 /* global styles here */
+/* Text import, colors, styles */
 @font-face {
   font-family: "RelevantBold";
   src: local("RelevantBold"),
@@ -58,7 +59,6 @@ h3 {
   background-color: #fcf6ec;
   display: inline-block;
   border: none;
-  /* border: 1px solid #ccc; */
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -105,7 +105,6 @@ textarea {
   display: inline-block;
   border: none;
   resize: none;
-  /* border: 1px solid #ccc; */
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -212,16 +211,6 @@ textarea:focus {
   transition: all 0.2s ease-in-out;
 }
 
-.upload {
-  width: 200px;
-  height: 200px;
-  display: block;
-  border: 2px dashed #e5e5e5;
-  border-radius: 200px;
-  background-color: #f7f7f7;
-  padding: 5rem 5rem 5rem 5rem;
-}
-
 .center {
   display: block;
   margin: 0 auto;
@@ -255,23 +244,7 @@ hr {
 
   border: 1px solid #f8f3f6;
 }
-.transition {
-  /* The default, as in, you get this without defining anything */
-  transition-timing-function: ease;
-  transition: 0.3s;
-}
 
-.upload-header {
-  color: #909090;
-  text-align: center;
-  margin: 2rem 0 0 0;
-}
-
-.upload-body {
-  color: #909090;
-  text-align: center;
-  margin: 0.5rem 0 2rem 0;
-}
 .import-pad {
   margin: 10rem;
 }

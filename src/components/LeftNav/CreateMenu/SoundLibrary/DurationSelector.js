@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateSustain } from "../../../../actions/shared";
+import { updateDuration } from "../../../../actions/shared";
 const LibListStyle = {
   textAlign: "left",
   margin: 0,
@@ -15,15 +15,15 @@ const LibListItemStyle = {
   padding: ".25rem"
 };
 
-class SustainButton extends React.Component {
+//A single button describing a single duration option
+class DurationButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = () => {
-    console.log("clicked");
-    this.props.dispatch(updateSustain(this.props.sustain));
+    this.props.dispatch(updateDuration(this.props.duration));
   };
 
   render() {
@@ -34,24 +34,19 @@ class SustainButton extends React.Component {
           borderRadius: "100%",
           border: "none",
           backgroundColor:
-            this.props.sustain === this.props.selectedSustain
+            //if not selected, render a lighter purple
+            this.props.duration === this.props.selectedDuration
               ? "#692d54"
               : "#c4b2be",
-          width: this.props.toneSizes[this.props.sustain] * 2 + "px",
-          height: this.props.toneSizes[this.props.sustain] * 2 + "px",
+          // get the radius of the tones from store, and * 2 to get width/height
+          width: this.props.toneSizes[this.props.duration] * 2 + "px",
+          height: this.props.toneSizes[this.props.duration] * 2 + "px",
           position: "relative",
-          marginTop: 50 - this.props.toneSizes[this.props.sustain] - 30 + "px",
+          marginTop: 50 - this.props.toneSizes[this.props.duration] - 30 + "px",
           outline: "none"
         }}
       >
-        <div className="sustain-select">
-          {" "}
-          {this.props.text}
-          {/* {this.props.sustain === this.props.selectedSustain
-            ? this.props.text
-            : null}
-        </div> */}
-        </div>
+        <div className="sustain-select">{this.props.text}</div>
       </button>
     );
   }
@@ -59,25 +54,27 @@ class SustainButton extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    selectedSustain: state.shared.selectedSustain,
+    selectedDuration: state.shared.selectedDuration,
     toneSizes: state.shared.toneSizes
   };
 }
 
-const ConnectedSustainButton = connect(mapStateToProps)(SustainButton);
+const ConnectedDurationButton = connect(mapStateToProps)(DurationButton);
 
-export default class SustainMenu extends React.Component {
+export default class DurationMenu extends React.Component {
   render() {
-    var susToPass = ["32n", "16n", "8n", "4n", "2n", "1m", "2m"];
-    var susToShow = ["", "16", "1/8", "1/4", "1/2", "1"];
+    var durToPass = ["32n", "16n", "8n", "4n", "2n", "1m", "2m"];
+    var durToShow = ["", "16", "1/8", "1/4", "1/2", "1"];
 
     return (
       <React.Fragment>
         <h3 className="light inl-blk"> DURATION</h3>
         <ul style={LibListStyle}>
-          {susToShow.map((item, i) => (
+          {/* render each duration option with custom text.
+          pass text & duration value to each button.  */}
+          {durToShow.map((item, i) => (
             <li style={LibListItemStyle} key={item.color}>
-              <ConnectedSustainButton text={item} sustain={susToPass[i]} />
+              <ConnectedDurationButton text={item} duration={durToPass[i]} />
             </li>
           ))}
         </ul>

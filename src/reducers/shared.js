@@ -13,7 +13,7 @@ import {
   UPDATE_VOLUME,
   TOGGLE_MODE,
   UPDATE_TEMPO,
-  UPDATE_SUSTAIN
+  UPDATE_DURATION
 } from "../actions/shared";
 
 /*
@@ -32,17 +32,17 @@ export default function shared(
     loopCount: 1,
     muted: false,
     mode: "linear",
-    selectedSustain: "8n",
+    selectedDuration: "8n",
     fileName: "MyProject",
     volume: 0,
     tempo: 110,
     toneSizes: {
-      "32n": window.innerHeight/80,
-      "16n": window.innerHeight/57,
-      "8n": window.innerHeight/50,
-      "4n": window.innerHeight/45,
-      "2n": window.innerHeight/40,
-      "1m": window.innerHeight/33,
+      "32n": window.innerHeight / 92,
+      "16n": window.innerHeight / 70,
+      "8n": window.innerHeight / 60,
+      "4n": window.innerHeight / 52,
+      "2n": window.innerHeight / 43,
+      "1m": window.innerHeight / 35,
       "2m": 30
     }
   },
@@ -66,9 +66,9 @@ export default function shared(
       return Object.assign({}, state, {
         fileName: action.fileName
       });
-    case UPDATE_SUSTAIN:
+    case UPDATE_DURATION:
       return Object.assign({}, state, {
-        selectedSustain: action.selectedSustain
+        selectedDuration: action.selectedDuration
       });
     case UPDATE_VOLUME:
       return Object.assign({}, state, {

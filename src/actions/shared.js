@@ -20,7 +20,7 @@ export const UPDATE_FILENAME = "UPDATE_FILENAME";
 export const UPDATE_VOLUME = "UPDATE_VOLUME";
 export const TOGGLE_MODE = "TOGGLE_MODE";
 export const UPDATE_TEMPO = "UPDATE_TEMPO";
-export const UPDATE_SUSTAIN = "UPDATE_SUSTAIN";
+export const UPDATE_DURATION = "UPDATE_DURATION";
 
 export function togglePlay() {
   return {
@@ -36,10 +36,10 @@ export function updateFilename(name) {
   };
 }
 
-export function updateSustain(sus) {
+export function updateDuration(sus) {
   return {
-    type: UPDATE_SUSTAIN,
-    selectedSustain: sus
+    type: UPDATE_DURATION,
+    selectedDuration: sus
   };
 }
 
@@ -107,7 +107,6 @@ export function toggleUnmute() {
 }
 
 export function trashAllLinear() {
-  console.log("TRASH ALL LIN");
   return dispatch => {
     dispatch({ type: TRASH_ALL_LINEAR });
     dispatch(resetLoopCount());
@@ -121,8 +120,6 @@ export function trashAllLinear() {
 }
 
 export function trashAllAngular() {
-  // var interval = this.props.centerY/7;
-  console.log("TRASH ALL ANG");
   var interval = window.innerHeight / 14;
   return dispatch => {
     dispatch({ type: TRASH_ALL_ANGULAR });

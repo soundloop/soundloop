@@ -9,10 +9,9 @@ import {
 } from "../../../actions/shared";
 
 class ToggleMode extends React.Component {
-  // mode is then checked in ToneKonva, LoopKonva
+  //switch to Angular or Linear Mode on button click
   handleClick = (event, newVal) => {
     if (newVal !== null && !this.props.playing) {
-      console.log("being passed: " + newVal);
       if (newVal !== this.props.mode) {
         if (newVal === "angular") {
           this.props.dispatch(toggleMode(newVal));
