@@ -2,7 +2,7 @@
 
 Soundloop is a web application that allows students of any age to create music using computational thinking concepts. 
 
-<br>
+
 
 ## **Available Scripts**
 
@@ -31,12 +31,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-<br>
+
+
 
 ## Deployment
 
 This github repository is linked to Netlify ([https://www.netlify.com/](https://www.netlify.com/)), causing continuous deployment of the app whenever pushes to the master branch are made. 
 <br>
+
+
 
 ## Major Frameworks & API's
 
@@ -44,7 +47,9 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 - Redux - manages the global state of the application, pushing the data needed across components to one overall JSON file called the store.  [https://redux.js.org/](https://redux.js.org/)
 - Konva - an HTML5 Canvas JavaScript framework that extends the 2d context by enabling canvas interactivity for desktop and mobile applications. [https://konvajs.org/docs/index.html](https://konvajs.org/docs/index.html)
 - ToneJS - a framework for creating interactive music in the browser. [https://tonejs.github.io/](https://tonejs.github.io/)
-<br>
+
+
+
 
 ## Navigating the Project Directory
 
@@ -58,7 +63,9 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
     - *middleware -* Loggers for examining the store's state.
     - *reducers -* files that specify how the application's state changes in response to actions sent to the store.
 - **package.json** - a list of what packages and versions Soundloop requires
-<br>
+
+
+
 
 ## How the app works
 
