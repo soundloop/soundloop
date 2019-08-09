@@ -22,7 +22,6 @@ class SustainButton extends React.Component {
   }
 
   handleClick = () => {
-    console.log("clicked");
     this.props.dispatch(updateSustain(this.props.sustain));
   };
 

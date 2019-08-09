@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles/index.css";
-import { Circle, Layer } from "react-konva";
+import { Circle } from "react-konva";
 import { connect } from "react-redux";
 import Konva from "konva";
 import { updateLoop } from "../actions/loops";
 import { playTone } from "../actions/cord";
-import { throwStatement, thisExpression } from "@babel/types";
-import { updateTone, deleteTone, replaceTone } from "../actions/tones";
+import { updateTone, replaceTone } from "../actions/tones";
 
 /*
 ToneKonva - Each tone on the loop is instantiated on load with no color and sound
@@ -214,7 +213,7 @@ class ToneKonva extends React.Component {
   }
 
   // because x and y positions of each ToneKonva component do not change on rotation,
-  // this function finds the corresponding coordinates of the given x1 and y1 
+  // this function translates the given x1 and y1 from the cursor to the absolute position
   // as if it has been rotated with the ToneKonva components
   findTrueCoordinates(x1, y1, angle, distance) {
     var originalAngle = Math.atan2(y1, x1);

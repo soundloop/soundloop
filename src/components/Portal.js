@@ -1,5 +1,10 @@
 // adapted from https://github.com/tajo/react-portal/blob/55ed77ab823b03d1d4c45b950ba26ea5d687e85c/src/LegacyPortal.js
 
+/*
+Portal is used to draw DOM elements like divs in the Konva Stage
+See more here: https://konvajs.org/docs/react/DOM_Portal.html
+*/
+
 import React from "react";
 import ReactDOM from "react-dom";
 

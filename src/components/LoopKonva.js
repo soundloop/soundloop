@@ -2,7 +2,6 @@ import React from "react";
 import { Circle } from "react-konva";
 import { connect } from "react-redux";
 import { addTone } from "../actions/tones";
-import { throwStatement } from "@babel/types";
 import { updateLoopSpeed } from "../actions/loops";
 
 /*

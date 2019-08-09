@@ -76,6 +76,8 @@ export function toggleStop() {
   };
 }
 
+// loopCount tracks how many loops are active, and is used the in NewLoop component to determine which loop to activate
+
 let loopCount = 1;
 export function addLoopCount() {
   return {
@@ -107,7 +109,6 @@ export function toggleUnmute() {
 }
 
 export function trashAllLinear() {
-  console.log("TRASH ALL LIN");
   return dispatch => {
     dispatch({ type: TRASH_ALL_LINEAR });
     dispatch(resetLoopCount());
@@ -121,8 +122,6 @@ export function trashAllLinear() {
 }
 
 export function trashAllAngular() {
-  // var interval = this.props.centerY/7;
-  console.log("TRASH ALL ANG");
   var interval = window.innerHeight / 14;
   return dispatch => {
     dispatch({ type: TRASH_ALL_ANGULAR });

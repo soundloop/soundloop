@@ -29,7 +29,7 @@ export default function shared(
     },
     screenWidth: window.innerWidth,
     screenHeight: window.innerHeight,
-    loopCount: 1,
+    loopCount: 2,
     muted: false,
     mode: "linear",
     selectedSustain: "8n",

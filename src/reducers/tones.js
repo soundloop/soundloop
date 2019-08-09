@@ -28,9 +28,8 @@ export default function tones(state = [], action) {
         }
       ];
 
-    // return new state with modified tone color, sound, and stroke with everything else same
+    // UPDATE_TONE returns new state with modified tone color, sound, and stroke with all else the same
     case UPDATE_TONE:
-      //console.log(...state);
       var id = action.id;
 
       return [

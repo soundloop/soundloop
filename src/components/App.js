@@ -14,6 +14,11 @@ import { screenResize } from "../actions/shared";
 import BugReporter from "./BugReporter";
 import ReactGA from "react-ga";
 
+/*
+App is used to mount all of our components
+It includes an event listener that listens for a screen resize and dispatches the changes to the store
+*/
+
 function initializeReactGA() {
   ReactGA.initialize("UA-145158244-1");
   ReactGA.pageview("/app");

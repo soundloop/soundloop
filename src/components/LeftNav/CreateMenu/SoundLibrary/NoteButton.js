@@ -3,7 +3,14 @@ import Draggable from "react-draggable"; // The default
 import { connect } from "react-redux";
 import { updateTone } from "../../../../actions/tones";
 import { playTone } from "../../../../actions/cord";
-class ToneButton extends React.Component {
+
+/*
+NoteButton - A button that contains all of the infomation needed to update ToneKonva components
+
+The NoteButton class consists of a draggable button that updates nearby ToneKonva components on drag end
+*/
+
+class NoteButton extends React.Component {
   constructor(props) {
     super(props);
     this.selector = React.createRef();
@@ -18,14 +25,13 @@ class ToneButton extends React.Component {
     this.cy = this.props.center.y;
     this.handleStop = this.handleStop.bind(this);
     this.snap = this.snap.bind(this);
-    this.findSnapCoordinates = this.findSnapCoordinates.bind(this);
     this.findClosestLoop = this.findClosestLoop.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
   }
 
+  // iterate through loops array and compare radii to find the closest loop
   findClosestLoop(distToCenter) {
-    // iterate through loops array and compare radii
     var acceptableRange = 50;
     var loopArray = this.props.loops;
 
@@ -51,19 +57,11 @@ class ToneButton extends React.Component {
     }
   }
 
-  findSnapCoordinates(x1, y1, cx, cy, distance) {
-    var angle = Math.atan2(y1, x1);
-    const x2 = cx - Math.cos(angle) * distance;
-    const y2 = cy + Math.sin(angle) * distance;
-    return { x: x2, y: y2 };
-  }
-
-  findClosestInterval(a, b, loop) {
-    // finds closest tone and returns the index so that color can be changed
+  // finds closest tone and returns the index in the tones list
+  findClosestTone(a, b, loop) {
     var min = 100;
     var ret = 0;
     for (var i = 0; i < this.props.tones.length; i++) {
-      // need to compare pt + or - offset
       if (this.props.tones[i].attachedLoop === loop) {
         var x = this.cx - this.props.tones[i].offset.x;
         var y = this.cy - this.props.tones[i].offset.y;
@@ -79,44 +77,43 @@ class ToneButton extends React.Component {
     return ret;
   }
 
-  // convert current cursor location to coordinates
+  // because x and y positions of each ToneKonva component do not change on rotation,
+  // this function translates the given x1 and y1 from the cursor to the absolute position
+  // as if it has been rotated with the ToneKonva components
   findTrueCoordinates(x1, y1, angle, distance) {
-    // current angle from center
+    // the current angle from center
     var originalAngle = Math.atan2(y1, x1);
     // original angle in radians
     var angleRad = angle * (Math.PI / 180);
-    // new angle
     var newAngle = originalAngle - angleRad;
     const x2 = this.cx + Math.cos(newAngle) * distance;
     const y2 = this.cy + Math.sin(newAngle) * distance;
     return { x: x2, y: y2 };
   }
 
+  // handles all functions related to finding closest tone and updating it with current value
   snap(x1, y1) {
-    // calculate virtual location with rotation
-    // first calculate distance
     var a = y1 - this.cy;
     var b = x1 - this.cx;
     var distToCenter = Math.sqrt(a * a + b * b);
     var loopToSnap = this.findClosestLoop(distToCenter);
 
+    // there is a loop to snap to
     if (loopToSnap) {
-      console.log("LSNAP in TB: " + loopToSnap.index);
       var angle = this.props.loops[loopToSnap.index].rotation;
       var trueCoords = this.findTrueCoordinates(b, a, angle, distToCenter);
 
-      var intervalId = this.findClosestInterval(
+      var closestTone = this.findClosestTone(
         trueCoords.x,
         trueCoords.y,
         loopToSnap.index
       );
-
+      // dispatch updateTone() with relevant information
       this.props.dispatch(
         updateTone(
-          intervalId,
+          closestTone,
           this.props.color,
           this.props.sound,
-          //  this.props.screenHeight / 50,
           this.props.toneSizes[this.props.selectedSustain],
           this.props.selectedSustain
         )
@@ -124,6 +121,8 @@ class ToneButton extends React.Component {
     }
   }
 
+  // on drag stop, get x and y location of cursor and snap
+  // make all tones with null sound transparent
   handleStop() {
     if (this.props.playing === false) {
       this.rect = this.selector.current.getBoundingClientRect();
@@ -131,13 +130,6 @@ class ToneButton extends React.Component {
       const y = this.rect.top;
 
       this.snap(x, y);
-
-      // this.setState({
-      //   deltaPosition: {
-      //     x: 0,
-      //     y: 0
-      //   }
-      // });
 
       for (var i = 0; i < this.props.tones.length; i++) {
         if (
@@ -150,6 +142,7 @@ class ToneButton extends React.Component {
     }
   }
 
+  // play sound of note on click
   handleClick() {
     if (!this.props.playing) {
       this.props.dispatch(
@@ -158,6 +151,7 @@ class ToneButton extends React.Component {
     }
   }
 
+  // on drag start, make all tones with null sound visible
   handleDrag() {
     var radius = this.props.screenHeight / 350;
     for (var i = 0; i < this.props.tones.length; i++) {
@@ -235,4 +229,4 @@ function mapStateToProps(state) {
 
 //
 
-export default connect(mapStateToProps)(ToneButton);
+export default connect(mapStateToProps)(NoteButton);
