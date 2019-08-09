@@ -47,6 +47,22 @@ class Cord extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (prevProps.height !== this.props.height){
+      var max = this.props.height / 2 - 50;
+      var interval = max / 2;
+      this.pts = [];
+      var flux = 8;
+      var prevX = this.props.center.x;
+      var prevY = this.props.center.y;
+      for (var i = 0; i < 3; i++) {
+        this.pts.push(prevX);
+        this.pts.push(prevY);
+        prevX = prevX + flux;
+        prevY = prevY - interval;
+        flux = -flux;
+      }
+    }
+
     if (this.props.playing) {
       this.tween = new Konva.Tween({
         node: this.line,
@@ -69,6 +85,7 @@ class Cord extends React.Component {
     if (this.props.volume !== prevProps.volume) {
       Tone.Master.volume.value = this.props.volume;
     }
+
     if (
       this.props.sounds &&
       this.props.sounds.length > 0 &&
@@ -82,8 +99,6 @@ class Cord extends React.Component {
       }
 
       if (this.props.playing) {
-        // this.line.fill(this.props.color);
-
         this.tween.play();
       }
     }

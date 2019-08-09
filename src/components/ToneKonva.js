@@ -36,11 +36,15 @@ class ToneKonva extends React.Component {
     var x2 = this.props.x;
     var y2 = Math.round(this.props.y + radius);
 
-    var rad = Math.acos(
-      (2 * (radius * radius) -
-        Math.abs((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))) /
-        (2 * (radius * radius))
-    );
+    var cos = (2 * (radius * radius) -
+    Math.abs((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))) /
+    (2 * (radius * radius))
+
+    if (cos < -1){
+      cos = -1;
+    }
+
+    var rad = Math.acos(cos);
 
     var deg = rad * (180 / Math.PI);
 

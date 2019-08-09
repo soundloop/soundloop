@@ -34,12 +34,13 @@ export default function shared(
     volume: 0,
     tempo: 1,
     toneSizes: {
-      "32n": 10,
-      "16n": 14,
-      "8n": 16,
-      "4n": 18,
-      "2n": 20,
-      "1m": 25,
+      "32n": window.innerHeight/80,
+      "16n": window.innerHeight/57,
+      "8n": window.innerHeight/50,
+      "4n": window.innerHeight/45,
+      "2n": window.innerHeight/40,
+      "1m": window.innerHeight/33,
+      // "1m": 25,
       "2m": 30
     }
   },
