@@ -39,7 +39,6 @@ export default function shared(
       "4n": window.innerHeight/45,
       "2n": window.innerHeight/40,
       "1m": window.innerHeight/33,
-      // "1m": 25,
       "2m": 30
     }
   },

@@ -112,8 +112,8 @@ export function trashAllLinear() {
     dispatch(addLoop(window.innerHeight / 6));
     dispatch(addLoop(window.innerHeight / 12));
     dispatch(addLoop(window.innerHeight / 24));
-    dispatch(addLoop(window.innerHeight / 48));
     dispatch(activateLoop(0));
+    dispatch(activateLoop(1));
   };
 }
 
