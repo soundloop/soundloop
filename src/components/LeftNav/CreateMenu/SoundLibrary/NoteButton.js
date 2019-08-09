@@ -114,8 +114,8 @@ class NoteButton extends React.Component {
           closestTone,
           this.props.color,
           this.props.sound,
-          this.props.toneSizes[this.props.selectedSustain],
-          this.props.selectedSustain
+          this.props.toneSizes[this.props.selectedDuration],
+          this.props.selectedDuration
         )
       );
     }
@@ -146,7 +146,7 @@ class NoteButton extends React.Component {
   handleClick() {
     if (!this.props.playing) {
       this.props.dispatch(
-        playTone(this.props.sound, this.props.selectedSustain)
+        playTone(this.props.sound, this.props.selectedDuration)
       );
     }
   }
@@ -222,7 +222,7 @@ function mapStateToProps(state) {
     playing: state.shared.playing,
     center: state.shared.center,
     screenHeight: state.shared.screenHeight,
-    selectedSustain: state.shared.selectedSustain,
+    selectedDuration: state.shared.selectedDuration,
     toneSizes: state.shared.toneSizes
   };
 }

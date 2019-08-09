@@ -4,6 +4,8 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import { activateLoop } from "../../../actions/loops";
 
+//Add a new loop to the UI
+
 class NewLoop extends React.Component {
   handleClick = () => {
     // if loopCount is less than length of loops

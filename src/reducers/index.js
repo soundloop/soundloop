@@ -32,18 +32,17 @@ export default function(state, action) {
       loopCount: 1,
       muted: false,
       mode: action.data.shared.mode,
-      selectedSustain: "8n",
+      selectedDuration: "8n",
       fileName: action.data.shared.fileName,
       volume: 0,
       tempo: action.data.shared.tempo,
       toneSizes: {
-        "32n": 10,
-        "16n": 14,
-        "8n": 16,
-        "4n": 18,
-        "2n": 20,
-        "1m": 25,
-        "2m": 30
+        "32n": Math.round(window.innerHeight / 92),
+        "16n": Math.round(window.innerHeight / 70),
+        "8n": Math.round(window.innerHeight / 60),
+        "4n": Math.round(window.innerHeight / 52),
+        "2n": Math.round(window.innerHeight / 43),
+        "1m": Math.round(window.innerHeight / 35)
       }
     };
     state.cord = { sounds: [] };

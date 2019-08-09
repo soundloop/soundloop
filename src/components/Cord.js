@@ -15,13 +15,13 @@ It also contains a Konva Tween animation that animates between two states:
 */
 
 class Cord extends React.Component {
-  constructor(props){
-    super(props)
-    
+  constructor(props) {
+    super(props);
+
     // initialize values for the cord drawing
     // this.max is the highest point of the cord on the page
     this.pts = [];
-    
+
     this.max = this.props.height / 2 - 75;
     this.numIntervals = 2;
     this.interval = this.max / this.numIntervals;
@@ -45,7 +45,6 @@ class Cord extends React.Component {
       })
       .toMaster();
     this.melodyPlayer.stealVoices = false;
-    
 
     var x = this.props.center.x;
     var y = this.props.center.y;
@@ -63,7 +62,7 @@ class Cord extends React.Component {
 
   componentDidUpdate(prevProps) {
     // if window height changes, then recalculate the set of points for this.tween
-    if (prevProps.height !== this.props.height){
+    if (prevProps.height !== this.props.height) {
       // reset pts to empty array
       this.pts = [];
       // recalculate max and interval based on current window height
@@ -114,7 +113,7 @@ class Cord extends React.Component {
           (Math.random() * 0.5 + 0.5) * 0.8
         );
       }
-      
+
       // play Tween animation
       if (this.props.playing) {
         this.tween.play();

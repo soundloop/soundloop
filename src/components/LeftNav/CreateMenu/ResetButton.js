@@ -4,7 +4,9 @@ import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import { trashAllLinear, trashAllAngular } from "../../../actions/shared";
 
-class TrashButton extends React.Component {
+//Reset Soundloop to a blank slate
+
+class ResetButton extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -16,7 +18,6 @@ class TrashButton extends React.Component {
               : () => this.props.dispatch(trashAllLinear())
           }
         >
-          {/* <FontAwesomeIcon className="inl-blk fa-lg" icon={faRedoAlt} /> */}
           <FontAwesomeIcon className="inl-blk fa-lg" icon={faRedoAlt} />
           <h3 style={{ marginLeft: "1rem" }} className="inl-blk light  ">
             RESET
@@ -29,9 +30,8 @@ class TrashButton extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    playing: state.shared.playing,
     mode: state.shared.mode
   };
 }
 
-export default connect(mapStateToProps)(TrashButton);
+export default connect(mapStateToProps)(ResetButton);
