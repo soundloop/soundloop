@@ -2,6 +2,7 @@
 
 Soundloop is a web application that allows students of any age to create music using computational thinking concepts. 
 
+<br><br>
 
 
 ## **Available Scripts**
@@ -33,14 +34,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
 
-
+<br><br>
 ## Deployment
 
 This github repository is linked to Netlify ([https://www.netlify.com/](https://www.netlify.com/)), causing continuous deployment of the app whenever pushes to the master branch are made. 
-<br>
 
 
 
+<br><br>
 ## Major Frameworks & API's
 
 - React - a Javascript framework for creating UI. [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
@@ -49,7 +50,7 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 - ToneJS - a framework for creating interactive music in the browser. [https://tonejs.github.io/](https://tonejs.github.io/)
 
 
-
+<br><br>
 
 ## Navigating the Project Directory
 
@@ -64,7 +65,7 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
     - *reducers -* files that specify how the application's state changes in response to actions sent to the store.
 - **package.json** - a list of what packages and versions Soundloop requires
 
-
+<br><br>
 
 
 ## How the app works
