@@ -6,6 +6,7 @@ import ToneButton from "./ToneButton";
 import Download from "./Download";
 import TextField from "@material-ui/core/TextField";
 import Upload from "./Upload";
+import TrashButton from "./TrashButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
@@ -81,6 +82,7 @@ const LibListItemStyle = {
 
 const CardStyle = {
   position: "absolute",
+  zIndex: 10,
   top: "0%",
   left: "60px",
   width: "320px",
@@ -245,17 +247,6 @@ class LibraryUnconnected extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className={this.state.noteSelected ? "cursor" : ""}> </div> */}
-        {/* <h3 className="light inl-blk"> TEMPO</h3>
-        <TempoSlider
-          defaultValue={110}
-          onChange={this.handleTempoChange}
-          aria-labelledby="continuous-slider"
-          valueLabelDisplay="on"
-          min={70}
-          max={150}
-          disabled = {!this.props.playing ? false : true}
-        /> */}
         <h3 className="light inl-blk"> NOTES</h3>
         <ul style={LibListStyle}>
           {this.state.tones[this.state.octave - 1].map(item => (
@@ -317,20 +308,8 @@ class CreateMenuUnconnected extends React.Component {
         <LibraryContainer />
         <hr />
         <NewLoop />
-        <h3 className="light inl-blk"> TEMPO</h3>
-        <TempoSlider
-          defaultValue={1}
-          onChange={this.handleTempoChange}
-          aria-labelledby="continuous-slider"
-          valueLabelDisplay="on"
-          min={.5}
-          max={2}
-          step={.5}
-          marks
-          disabled = {!this.props.playing ? false : true}
-        />
-        {/* <SoundEffects /> */}
         <ToggleMode />
+        <TrashButton />
       </React.Fragment>
     );
   }

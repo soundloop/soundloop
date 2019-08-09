@@ -3,9 +3,8 @@ import "../styles/index.css";
 import AppBar from "@material-ui/core/AppBar";
 import PlayButton from "./PlayButton";
 import MuteButton from "./MuteButton";
-import TrashButton from "./TrashButton";
+import TempoSlider from "./TempoSlider";
 import Toolbar from "@material-ui/core/Toolbar";
-import InstrumentSelect from "./InstrumentSelect";
 import { connect } from "react-redux";
 
 const NavStyleOuter = {
@@ -13,6 +12,7 @@ const NavStyleOuter = {
   top: "auto",
   bottom: "2.5vh",
   height: "5rem",
+  zIndex: 0,
   width: "100vw"
 };
 
@@ -35,10 +35,9 @@ class BottomNav extends React.Component {
           }}
         >
           <Toolbar style={ToolbarStyle}>
-            {/* <InstrumentSelect /> */}
             <PlayButton />
+            <TempoSlider />
             <MuteButton />
-            <TrashButton />
           </Toolbar>
         </div>
       </div>

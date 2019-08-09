@@ -8,7 +8,6 @@ import { addLoop, activateLoop } from "../actions/loops";
 
 class MountedLoops extends React.Component {
   componentDidMount() {
-
     // if mode true then dispatch this way
     if (this.props.mode==="angular"){
       var interval = this.props.centerY/7.5
@@ -20,9 +19,9 @@ class MountedLoops extends React.Component {
       this.props.dispatch(addLoop(this.props.height / 6));
       this.props.dispatch(addLoop(this.props.height / 12));
       this.props.dispatch(addLoop(this.props.height / 24));
-      this.props.dispatch(addLoop(this.props.height / 48));
     }
     this.props.dispatch(activateLoop(0));
+    this.props.dispatch(activateLoop(1));
   }
 
   render() {

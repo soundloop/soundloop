@@ -31,7 +31,7 @@ export default function(state, action) {
       selectedSustain: "8n",
       fileName: action.data.shared.fileName,
       volume: 0,
-      tempo: 1,
+      tempo: action.data.shared.tempo,
       toneSizes: {
         "32n": 10,
         "16n": 14,
@@ -42,7 +42,7 @@ export default function(state, action) {
         "2m": 30
       }
     };
-    state.cord = {};
+    state.cord = { sounds: [], index: 0 };
   }
   return appReducer(state, action);
 }
