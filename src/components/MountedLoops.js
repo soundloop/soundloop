@@ -6,6 +6,10 @@ import { connect } from "react-redux";
 import LoopKonva from "./LoopKonva";
 import { addLoop, activateLoop } from "../actions/loops";
 
+/*
+MountedLoops - Mounts all of the loops using the tones list in the store after dispatching them based on mode
+*/
+
 class MountedLoops extends React.Component {
   componentDidMount() {
     // if mode true then dispatch this way

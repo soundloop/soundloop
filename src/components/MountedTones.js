@@ -5,6 +5,10 @@ import { Layer } from "react-konva";
 import { connect } from "react-redux";
 import ToneKonva from "./ToneKonva";
 
+/*
+MountedTones - Mounts all of the tones using the tones list in the store
+*/
+
 class MountedTones extends React.Component {
   render() {
     return (

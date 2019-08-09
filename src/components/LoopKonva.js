@@ -5,6 +5,12 @@ import { addTone } from "../actions/tones";
 import { throwStatement } from "@babel/types";
 import { updateLoopSpeed } from "../actions/loops";
 
+/*
+LoopKonva - Loops are the circles which tones attach to
+
+The LoopKonva class consists of a Konva Circle that has its own rotation and speed
+*/
+
 class LoopKonva extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +18,7 @@ class LoopKonva extends React.Component {
     this.numTones = 0;
   }
 
+  // calculate the absolute coordinates for each tone on the loop that is being dispatched
   findAngleCoord(cx, cy, angle, distance) {
     const x2 = cx - Math.cos(angle) * distance;
     const y2 = cy + Math.sin(angle) * distance;
@@ -19,9 +26,9 @@ class LoopKonva extends React.Component {
   }
 
   componentDidMount() {
+    // updateLoopSpeed on mount based on tempo in state.shared
     this.props.dispatch(updateLoopSpeed(this.props.id, this.calcTempo()));
-    console.log("MOUNTED TEMPO: " + this.calcTempo());
-    // console.log("SPEED LOOP " + this.props.id + ": ")
+
     if (this.props.mode === "angular") {
       if (this.props.id < 2) {
         this.numTones = 16;
@@ -33,6 +40,8 @@ class LoopKonva extends React.Component {
     }
     var interval = (2 * Math.PI) / this.numTones;
     var currAngle = 0;
+
+    // dispatch addTone() based on the number of 
     for (var i = 0; i < this.numTones; i++) {
       var coords = this.findAngleCoord(
         this.props.center.x,
@@ -58,11 +67,9 @@ class LoopKonva extends React.Component {
     }
   }
 
+  // translate tempo in BPM to angular speed
   calcTempo() {
-    // 90*((window.innerHeight/3)/action.radius)
     var baseTempo = this.props.tempo;
-    console.log("NEW TEMPO OF " + this.props.id + ": " + baseTempo);
-    console.log("TEMPO PROPS OF " + this.props.id + ": " + this.props.tempo);
     if (this.props.mode === "linear") {
       var multiplier = window.innerHeight / 3 / this.props.radius;
       this.tempo = ((baseTempo * 2) / 60) * multiplier;
@@ -76,14 +83,7 @@ class LoopKonva extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.tempo !== this.props.tempo) {
-      console.log("UPDATED IN LOOP ");
-      console.log(
-        "Tempo was: " + prevProps.tempo + " and now: " + this.props.tempo
-      );
-      console.log("Radius is: " + this.props.radius);
-      console.log("ID is: " + this.props.id);
       this.props.dispatch(updateLoopSpeed(this.props.id, this.calcTempo()));
-      console.log("this.calcTempo() = " + this.calcTempo());
     }
   }
 
