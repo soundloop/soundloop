@@ -1,8 +1,4 @@
-import {
-  ADD_TONE,
-  UPDATE_TONE,
-  REPLACE_TONE
-} from "../actions/tones";
+import { ADD_TONE, UPDATE_TONE, REPLACE_TONE } from "../actions/tones";
 import { TRASH_ALL_LINEAR, TRASH_ALL_ANGULAR } from "../actions/shared";
 
 /*
@@ -13,7 +9,6 @@ updating the values of a tone in the store, and replacing a tone on delete
 let nextToneId = 0;
 export default function tones(state = [], action) {
   switch (action.type) {
-    
     case ADD_TONE:
       return [
         ...state,
@@ -30,7 +25,6 @@ export default function tones(state = [], action) {
 
     // return new state with modified tone color, sound, and stroke with everything else same
     case UPDATE_TONE:
-      //console.log(...state);
       var id = action.id;
 
       return [

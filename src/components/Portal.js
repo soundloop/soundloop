@@ -1,5 +1,10 @@
 // adapted from https://github.com/tajo/react-portal/blob/55ed77ab823b03d1d4c45b950ba26ea5d687e85c/src/LegacyPortal.js
 
+//This component is a fix to a Konva bug
+// We need to include components within a Konva stage, but the stage doesn't support JSX rendering
+//So this portal allows us to put components inside of a Stage
+
+// https://gist.github.com/jimfb/d99e0678e9da715ccf6454961ef04d1b
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -27,7 +32,7 @@ export default class Portal extends React.Component {
     }
 
     let children = this.props.children;
-    // https://gist.github.com/jimfb/d99e0678e9da715ccf6454961ef04d1b
+
     if (typeof children.type === "function") {
       children = React.cloneElement(children);
     }
