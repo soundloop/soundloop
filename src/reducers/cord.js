@@ -1,6 +1,9 @@
 import { PLAY_TONE } from "../actions/cord";
 import { TRASH_ALL_LINEAR, TRASH_ALL_ANGULAR } from "../actions/shared";
 
+//The cord holds onto a list of sounds passed to it. 
+//It pulls the last pushed sound when being asked to play something.
+
 export default function cord(state = { sounds: [], index: 0 }, action) {
   switch (action.type) {
     case PLAY_TONE:

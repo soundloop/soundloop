@@ -1,0 +1,42 @@
+.LibListStyle {
+  text-align: left;
+  margin: 0;
+  z-index: 1;
+  padding: 0;
+  position: relative;
+}
+
+.LeftNavMenu {
+  margin-top: 14.5vh;
+}
+.LibListItemStyle {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.25rem;
+}
+
+.CardStyle {
+  position: absolute;
+  z-index: 10;
+  top: 0%;
+  left: 60px;
+  width: 320px;
+  height: 100vh;
+  background-color: #fff;
+  border-radius: 1%;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.01), 0 6px 6px rgba(0, 0, 0, 0.05);
+}
+
+.LeftNavStyle {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 60px;
+  height: 100vh;
+  background-color: #692d55;
+}
+
+.contentContainer {
+  padding: 2rem;
+  position: relative;
+}
