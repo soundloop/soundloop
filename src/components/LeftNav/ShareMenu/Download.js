@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
+//Take the store as a Json file and download it.
+//Appends an invisible element with the JSON data, automatically clicks it to download
 class Download extends React.Component {
   downloadFile = () => {
     const element = document.createElement("a");

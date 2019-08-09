@@ -37,13 +37,12 @@ export default function shared(
     volume: 0,
     tempo: 110,
     toneSizes: {
-      "32n": window.innerHeight / 92,
-      "16n": window.innerHeight / 70,
-      "8n": window.innerHeight / 60,
-      "4n": window.innerHeight / 52,
-      "2n": window.innerHeight / 43,
-      "1m": window.innerHeight / 35,
-      "2m": 30
+      "32n": Math.round(window.innerHeight / 92),
+      "16n": Math.round(window.innerHeight / 70),
+      "8n": Math.round(window.innerHeight / 60),
+      "4n": Math.round(window.innerHeight / 52),
+      "2n": Math.round(window.innerHeight / 43),
+      "1m": Math.round(window.innerHeight / 35)
     }
   },
   action

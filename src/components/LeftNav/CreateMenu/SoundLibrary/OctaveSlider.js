@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 
+//Material UI styles do not match SoundLoops. Override Material UI style with Soundloop's
+//Create Slider component with these styles.
 const SliderStyle = withStyles({
   root: {
     color: "#692D54",
@@ -54,6 +56,7 @@ export default class OctaveSlider extends React.Component {
     return (
       <React.Fragment>
         <h3 className="light inl-blk"> OCTAVE</h3>
+        {/* when slider changes, push val to store */}
         <SliderStyle
           onChange={this.props.changeFunction}
           defaultValue={4}
