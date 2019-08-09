@@ -5,8 +5,8 @@ import cord from "./cord";
 import file from "./file";
 import { combineReducers } from "redux";
 
-//  The index reducer combines all of the other reducers to form our store. 
-//  We pass it into a higher-order function, appReducer, 
+//  The index reducer combines all of the other reducers to form our store.
+//  We pass it into a higher-order function, appReducer,
 //  so that we can overwrite the overall state on file import.
 
 const appReducer = combineReducers({
@@ -46,7 +46,7 @@ export default function(state, action) {
         "2m": 30
       }
     };
-    state.cord = { sounds: [], index: 0 };
+    state.cord = { sounds: [] };
   }
   return appReducer(state, action);
 }

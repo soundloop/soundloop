@@ -42,7 +42,7 @@ class Cord extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.height !== this.props.height){
+    if (prevProps.height !== this.props.height) {
       var max = this.props.height / 2 - 50;
       var interval = max / 2;
       this.pts = [];
@@ -86,15 +86,9 @@ class Cord extends React.Component {
       prevProps.sounds !== this.props.sounds
     ) {
       if (!this.props.muted) {
-        console.log("all sound: " + JSON.stringify(this.props.sounds));
-        console.log("index" + this.props.index);
-        console.log(
-          "specific sound: " +
-            JSON.stringify(this.props.sounds[this.props.index])
-        );
         this.melodyPlayer.triggerAttackRelease(
-          this.props.sounds[this.props.index].sound,
-          this.props.sounds[this.props.index].duration,
+          this.props.sounds[this.props.sounds.length - 1].sound,
+          this.props.sounds[this.props.sounds.length - 1].duration,
           undefined,
           (Math.random() * 0.5 + 0.5) * 0.8
         );
