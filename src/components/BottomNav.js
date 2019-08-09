@@ -12,6 +12,7 @@ const NavStyleOuter = {
   top: "auto",
   bottom: "2.5vh",
   height: "5rem",
+  zIndex: 0,
   width: "100vw"
 };
 

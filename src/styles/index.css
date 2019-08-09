@@ -250,7 +250,7 @@ textarea:focus {
 }
 
 hr {
-  margin-top: 5rem;
+  margin-top: 10vh;
   margin-bottom: 1rem;
 
   border: 1px solid #f8f3f6;

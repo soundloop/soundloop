@@ -65,11 +65,16 @@ class Cord extends React.Component {
       Tone.Master.volume.value = this.props.volume;
     }
     if (
-      this.props.sounds &&
       this.props.sounds.length > 0 &&
       prevProps.sounds !== this.props.sounds
     ) {
       if (!this.props.muted) {
+        console.log("all sound: " + JSON.stringify(this.props.sounds));
+        console.log("index" + this.props.index);
+        console.log(
+          "specific sound: " +
+            JSON.stringify(this.props.sounds[this.props.index])
+        );
         this.melodyPlayer.triggerAttackRelease(
           this.props.sounds[this.props.index].sound,
           this.props.sounds[this.props.index].duration,
