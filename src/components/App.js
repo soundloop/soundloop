@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
-import { Stage, Layer, Rect, Text, Circle } from "react-konva";
-import Konva from "konva";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Stage } from "react-konva";
 import Portal from "./Portal";
 import BottomPlayback from "./BottomPlayback";
 import MountedTones from "./MountedTones";
-import { connect } from "react-redux";
 import reducer from "../reducers";
 import middleware from "../middleware";
 import { Provider } from "react-redux";
