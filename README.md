@@ -1,10 +1,3 @@
-# What is Soundloop?
-
-Soundloop is a web application that allows students of any age to create music using computational thinking concepts. 
-
-<br><br>
-
-
 ## **Available Scripts**
 
 In the project directory, you can run:
@@ -58,7 +51,7 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 - **node_modules** - the packages needed for running soundloop
 - **public** - files that Webpack does not compile, and are sent directly to build
 - **src** -  precompiled React files. This is where the majority of Soundloop lives.
-    - *components* - The UI elements split into independent, reusable pieces, allowing each piece to be edited in isolation. The highest level component that renders everything else is ****App.js
+    - *components* - The UI elements split into independent, reusable pieces, allowing each piece to be edited in isolation. The highest level component that renders everything else is App.js
     - *styles* - Global CSS
     - *actions* - Payloads of information sent to the store (our JSON database).
     - *middleware -* Loggers for examining the store's state.
@@ -68,14 +61,3 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 <br><br>
 
 
-## How the app works
-
-Each note is a circle that can be dragged onto a loop. During play, these notes will rotate around the loop and make sound upon striking the cord. 
-
-There are two different modes to SoundLoop - linear and angular. 
-
-### Linear Mode
-In linear mode, each loop plays at a constant linear velocity. This means that the smaller the loop is, the faster the notes will complete a loop cycle. This mode is great for creating rhythmic harmonies and crafting interesting new compositions.
-
-### Angular Mode
-In angular mode, each loop plays at a constant angular velocity. If lining up notes across loops, they will all play at the same time and make a chord. This mode is best for recreating your favorite songs.
