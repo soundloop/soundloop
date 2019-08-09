@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/index.css";
-import AppBar from "@material-ui/core/AppBar";
+import "../../styles/index.css";
 import PlayButton from "./PlayButton";
-import MuteButton from "./MuteButton";
+import VolumeOptions from "./VolumeOptions";
 import TempoSlider from "./TempoSlider";
 import Toolbar from "@material-ui/core/Toolbar";
 import { connect } from "react-redux";
@@ -20,7 +19,7 @@ const ToolbarStyle = {
   top: "50%"
 };
 
-class BottomNav extends React.Component {
+class BottomPlayback extends React.Component {
   render() {
     return (
       <div style={NavStyleOuter}>
@@ -37,7 +36,7 @@ class BottomNav extends React.Component {
           <Toolbar style={ToolbarStyle}>
             <PlayButton />
             <TempoSlider />
-            <MuteButton />
+            <VolumeOptions />
           </Toolbar>
         </div>
       </div>
@@ -50,6 +49,5 @@ function mapStateToProps(state) {
     center: state.shared.center.x
   };
 }
-const ConnectedBottomNav = connect(mapStateToProps)(BottomNav);
 
-export default ConnectedBottomNav;
+export default connect(mapStateToProps)(BottomPlayback);

@@ -1,21 +1,11 @@
 import React from "react";
-import "../styles/index.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeMute, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { toggleMute, toggleUnmute } from "../actions/shared";
-import Toolbar from "@material-ui/core/Toolbar";
-import Grid from "@material-ui/core/Grid";
+import { toggleMute, toggleUnmute } from "../../actions/shared";
 import Slider from "@material-ui/core/Slider";
 import VolumeOff from "@material-ui/icons/VolumeOff";
 import VolumeUp from "@material-ui/icons/VolumeUp";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import { updateVolume } from "../actions/shared";
-// const MuteButtonStyle = {
-//   color: "#692d55",
-//   position: "relative",
-//   margin: "0 auto 0 0 "
-// };
+import { withStyles } from "@material-ui/core/styles";
+import { updateVolume } from "../../actions/shared";
 
 const VolButton = {
   color: "#692d55",
@@ -35,11 +25,8 @@ const VolumeSlider = withStyles({
         "0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)",
 
       backgroundColor: "#692D54"
-
-      // Reset on touch devices, it doesn't add specificity
     }
   },
-  // active: {},
   track: {
     height: 4,
     borderRadius: 4

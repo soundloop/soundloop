@@ -4,7 +4,7 @@ import { Stage, Layer, Rect, Text, Circle } from "react-konva";
 import Konva from "konva";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Portal from "./Portal";
-import BottomNav from "./BottomNav";
+import BottomPlayback from "./BottomPlayback";
 import MountedTones from "./MountedTones";
 import { connect } from "react-redux";
 import reducer from "../reducers";
@@ -56,7 +56,7 @@ class App extends Component {
             <Provider store={store}>
               <BugReporter />
               <LeftNav />
-              <BottomNav />
+              <BottomPlayback />
             </Provider>
           </Portal>
         </Stage>

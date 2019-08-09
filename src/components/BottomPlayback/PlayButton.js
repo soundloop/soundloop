@@ -1,9 +1,8 @@
 import React from "react";
-import "../styles/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faPauseCircle } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { togglePlay, toggleStop } from "../actions/shared";
+import { togglePlay, toggleStop } from "../../actions/shared";
 
 const PlayButtonStyle = {
   color: "#692d55",

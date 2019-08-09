@@ -1,5 +1,5 @@
 import React from "react";
-import { updateTempo } from "../actions/shared";
+import { updateTempo } from "../../actions/shared";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import { faRunning } from "@fortawesome/free-solid-svg-icons";
