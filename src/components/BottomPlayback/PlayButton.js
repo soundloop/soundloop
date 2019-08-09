@@ -20,6 +20,7 @@ class PlayButton extends React.Component {
     document.addEventListener("keyup", this.spacePress);
   }
 
+  //An event listener so that pressing space also toggles playing/pausing.
   spacePress(e) {
     if (e.keyCode === 32) {
       this.props.playing
@@ -27,6 +28,7 @@ class PlayButton extends React.Component {
         : this.props.dispatch(togglePlay());
     }
   }
+  //Render play or pause button depending on state, and dispatch pause/play on click.
   render() {
     return (
       <React.Fragment>

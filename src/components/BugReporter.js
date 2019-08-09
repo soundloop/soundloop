@@ -50,8 +50,6 @@ const DialogContent = withStyles(theme => ({
 const buttonCircle = {
   backgroundColor: "#fff",
   border: "none",
-  // height: "50px",
-  // width: "50px",
   padding: "5px 20px",
   display: "block",
   position: "absolute",

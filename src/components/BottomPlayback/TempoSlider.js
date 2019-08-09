@@ -6,6 +6,8 @@ import { faRunning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 
+//Material UI styles do not match SoundLoops. Override Material UI style with Soundloop's
+//Create Slider component with these styles.
 const TempoSlider = withStyles({
   root: {
     color: "#692D54",
@@ -17,13 +19,9 @@ const TempoSlider = withStyles({
     "&:focus,&:hover,&$active": {
       boxShadow:
         "0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)",
-
       backgroundColor: "#692D54"
-
-      // Reset on touch devices, it doesn't add specificity
     }
   },
-  // active: {},
   track: {
     height: 4,
     borderRadius: 4
@@ -72,9 +70,11 @@ class Tempo extends React.Component {
             min={55}
             max={220}
             step={1}
+            //only allow change when paused
             disabled={!this.props.playing ? false : true}
           />
         </div>
+        {/* show the tempo to the right of the slider */}
         <h3 className="light " style={{ display: "inline-block" }}>
           {this.props.tempo}
         </h3>

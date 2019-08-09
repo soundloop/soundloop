@@ -19,6 +19,9 @@ const ToolbarStyle = {
   top: "50%"
 };
 
+/* 
+Renders the bottom playback container and its relevant features
+*/
 class BottomPlayback extends React.Component {
   render() {
     return (

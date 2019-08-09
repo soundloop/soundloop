@@ -12,6 +12,8 @@ const VolButton = {
   position: "relative"
 };
 
+//Material UI styles do not match SoundLoops. Override Material UI style with Soundloop's
+//Create Slider component with these styles.
 const VolumeSlider = withStyles({
   root: {
     color: "#692D54",
@@ -36,14 +38,17 @@ const VolumeSlider = withStyles({
     borderRadius: 4
   }
 })(Slider);
-class MuteButton extends React.Component {
+
+class VolumeOptions extends React.Component {
   constructor(props) {
     super(props);
+    //store the visual state of the slider locally, but pushes the volume value to the store
     this.state = { value: 100, beforeMuteVal: 100 };
     this.handleChange = this.handleChange.bind(this);
     this.handleMute = this.handleMute.bind(this);
     this.handleUnmute = this.handleUnmute.bind(this);
   }
+
   handleChange(event, newValue) {
     if (newValue === 0) {
       this.props.dispatch(toggleMute());
@@ -72,10 +77,10 @@ class MuteButton extends React.Component {
           position: "relative",
           marginRight: "0",
           marginLeft: "auto",
-
           color: "#692d55"
         }}
       >
+        {/* render muted or nonmuted volume icons depending on store's state */}
         {this.props.muted ? (
           <VolumeOff style={VolButton} onClick={() => this.handleUnmute()} />
         ) : (
@@ -108,4 +113,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(MuteButton);
+export default connect(mapStateToProps)(VolumeOptions);
