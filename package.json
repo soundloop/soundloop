@@ -1,5 +1,5 @@
 {
-  "name": "soundloop",
+  "name": "Soundloop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,6 @@
     "react-konva": "^16.8.7-3",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
-    "react-transition-group": "^4.2.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.87.3",
