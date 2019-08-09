@@ -1,6 +1,6 @@
 import { ADD_LOOP, UPDATE_LOOP, ACTIVATE_LOOP, UPDATE_LOOP_SPEED } from "../actions/loops";
-
 import { TRASH_ALL_LINEAR, TRASH_ALL_ANGULAR } from "../actions/shared";
+
 let nextLoopId = 0;
 export default function loops(state = [], action) {
   switch (action.type) {
