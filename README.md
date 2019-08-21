@@ -50,6 +50,7 @@ This github repository is linked to Netlify ([https://www.netlify.com/](https://
 - **build** - the compiled static code that the browser reads for rendering Soundloop
 - **node_modules** - the packages needed for running soundloop
 - **public** - files that Webpack does not compile, and are sent directly to build
+- **references** -  Design/wireframe files that we've made to support further development of Soundloop.
 - **src** -  precompiled React files. This is where the majority of Soundloop lives.
     - *components* - The UI elements split into independent, reusable pieces, allowing each piece to be edited in isolation. The highest level component that renders everything else is App.js
     - *styles* - Global CSS
